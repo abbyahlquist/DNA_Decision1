@@ -9,6 +9,7 @@ let year = 1;
 let population = 100;
 let diversity = 1.0; // 0–1
 let inbreeding = 0.0; // 0–1
+let insightText = "";
 
 // Events
 const events = [
