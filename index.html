@@ -19,21 +19,48 @@
             background-color: #0f2027;
             color: white;
         }
+
         .page {
             display: none;
             padding: 20px;
+            min-height: 100vh;
+            position: relative;
         }
+
+        #gamePage {
+            background-size: cover;
+            background-position: center;
+            transition: background-image 0.5s ease-in-out;
+        }
+
+        #gamePage::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.4);
+            z-index: 0;
+        }
+
+        .card, #event, .btn-light {
+            position: relative;
+            z-index: 1;
+        }
+
         .img-fluid {
             max-width: 80%;
             height: auto;
         }
+
         button.btn-light:hover {
             background-color: #bbb;
             color: #000;
         }
+
         .card {
             border-radius: 15px;
         }
+
         /* Progress bar animation */
         .progress-bar {
             transition: width 0.5s ease-in-out;
@@ -45,6 +72,7 @@
 <!-- TITLE PAGE -->
 <div id="titlePage" class="page text-center" style="display:block;">
     <h1 class="mb-4 animate__animated animate__fadeInDown">DNA Decisions</h1>
+    <p>You are a conservation practitioner working with aquatic animals. </p>
     <p>Learn to make genetic conservation decisions to save endangered species!</p>
     <button class="btn btn-primary btn-lg mt-3" onclick="startGame()">Start Game</button>
 </div>
@@ -54,7 +82,6 @@
 
     <!-- Species + Stats Card -->
     <div class="card p-4 shadow-lg bg-dark text-white mb-4">
-
         <h2 id="species"></h2>
         <p>Year: <span id="year"></span></p>
 
@@ -78,7 +105,6 @@
             <div id="inbreedBar" class="progress-bar bg-danger" style="width: 50%"></div>
         </div>
         <p><span id="inbreeding"></span></p>
-
     </div>
 
     <!-- Event Card -->
@@ -92,25 +118,18 @@
         <button class="btn btn-light btn-lg m-2" onclick="choiceB()"></button>
         <button class="btn btn-light btn-lg m-2" onclick="choiceC()"></button>
     </div>
-
-    <!-- Result / Genetics Insight -->
-<div class="card p-3 shadow-lg bg-dark text-white mt-3">
-    <h5>Genetics Insight</h5>
-    <p id="result"></p>
-</div>
-
 </div>
 
 <!-- WIN PAGE -->
 <div id="winPage" class="page text-center">
-    <h1 class="mb-4"> You Saved All Species!</h1>
+    <h1 class="mb-4">You Saved All Species!</h1>
     <p>Congratulations! Your conservation choices helped populations survive and thrive.</p>
     <button class="btn btn-success mt-3" onclick="restartGame()">Play Again</button>
 </div>
 
 <!-- LOSE PAGE -->
 <div id="losePage" class="page text-center">
-    <h1 class="mb-4"> Extinction Occurred</h1>
+    <h1 class="mb-4">Extinction Occurred</h1>
     <p>Unfortunately, your population collapsed. Genetic diversity and management decisions are crucial!</p>
     <button class="btn btn-danger mt-3" onclick="restartGame()">Try Again</button>
 </div>
