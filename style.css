@@ -36,7 +36,6 @@ button {
     background-repeat: no-repeat;
 }
 
-/* Different backgrounds for each page */
 #titlePage {
     background-image: url("images/title.jpg");
 }
