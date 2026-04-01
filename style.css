@@ -1,7 +1,7 @@
 body {
     font-family: Arial;
     text-align: center;
-    background-color: #eef;
+    background-color: rgb(171, 171, 240);
 }
 
 button {
@@ -10,3 +10,45 @@ button {
     font-size: 16px;
 }
 
+.page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.page > * {
+    position: relative;
+    z-index: 1;
+}
+
+.page {
+    display: none;
+    padding: 20px;
+    min-height: 100vh;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Different backgrounds for each page */
+#titlePage {
+    background-image: url("images/title.jpg");
+}
+
+#gamePage {
+    background-image: url("images/game.jpg");
+}
+
+#winPage {
+    background-image: url("images/win.jpg");
+}
+
+#losePage {
+    background-image: url("images/lose.jpg");
+}
