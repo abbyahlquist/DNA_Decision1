@@ -184,7 +184,7 @@ const levelEvents = [
         text: "A whale calf shows potential genetic disorder. Your move?",
         choices: [
             { text: "Restrict its breeding until DNA is verified.", good: true },
-            { text: "Allow it to breed immediately.", good: false },
+            { text: "Allow it to breed.", good: false },
             { text: "Release it without monitoring.", good: false }
         ]
     },
@@ -200,7 +200,7 @@ const levelEvents = [
         text: "Calves are dying due to limited genetic variation. Strategy?",
         choices: [
             { text: "Identify diverse parents and encourage mating.", good: true },
-            { text: "Increase food supply only.", good: false },
+            { text: "Increase food supply.", good: false },
             { text: "Move pods to new areas without monitoring.", good: false }
         ]
     },
@@ -239,7 +239,7 @@ const levelEvents = [
     {
         text: "Climate change is shifting plankton distribution, affecting food. Strategy?",
         choices: [
-            { text: "Track high-genetic-value pods and guide them to areas with more food.", good: true },
+            { text: "Track high genetic value pods and guide them to areas with more food.", good: true },
             { text: "Let whales find food naturally.", good: false },
             { text: "Supplement their food artificially.", good: false }
         ]
